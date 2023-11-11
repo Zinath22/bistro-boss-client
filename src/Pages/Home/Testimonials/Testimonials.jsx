@@ -6,6 +6,10 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { useEffect, useState } from "react";
+import { Rating } from "@smastrom/react-rating";
+
+
+import '@smastrom/react-rating/style.css'
 
 
 const Testimonials = () => {
@@ -26,8 +30,14 @@ const Testimonials = () => {
     {
         reviews.map(review => <SwiperSlide key={review._id}>
 
-            <div className="m-24">
-                <p>{review.details}</p>
+            <div className=" flex flex-col items-center mx-24 my-16">
+        
+            <Rating
+      style={{ maxWidth: 180 }}
+      value={review.rating}
+      readOnly
+    />
+                <p className="py-8">{review.details}</p>
                 <h3 className="text-2xl text-orange-400">{review.name}</h3>
             </div>
         </SwiperSlide>)
