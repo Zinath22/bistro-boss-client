@@ -2,7 +2,7 @@ import {
     createBrowserRouter,
     
   } from "react-router-dom";
-import MainLayout from "../MainLayout";
+
 import Home from "../Pages/Home/Home";
 import Menu from "../Pages/Home/Menu/Menu";
 import Order from "../Pages/Order/Order/Order";
@@ -10,6 +10,10 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoutes from "./PrivateRoutes";
 import Secret from "../Pages/Shared/Secret/Secret";
+import MainLayout from "../Layout/MainLayout";
+import Dashboard from "../Layout/Dashboard";
+import Cart from "../Pages/Dashboard/Cart/Cart";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
   const Routes = createBrowserRouter([
     {
@@ -42,6 +46,21 @@ import Secret from "../Pages/Shared/Secret/Secret";
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+      children: [
+        {
+          path: 'cart',
+          element: <Cart></Cart>
+        },
+        // admin routes 
+        {
+          path: 'users',
+          element: <AllUsers></AllUsers>
+        }
+      ]
+    }
   ]);
 
   export default Routes;

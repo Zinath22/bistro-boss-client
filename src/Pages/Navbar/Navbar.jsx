@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
+import UseCart from "../../Hooks/UseCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = UseCart();
 
   const handleLogOut = () => {
 
@@ -15,7 +17,20 @@ const Navbar = () => {
 
   const navOptions = <>
 
-    <li><Link to="/">Home</Link></li>
+<li><Link to="/">Home</Link></li>
+        <li><Link to="/menu">Our Menu</Link></li>
+        <li><Link to="/order/salad">Order Food</Link></li>
+        <li><Link to="/secret">Secret</Link></li>
+        <li>
+            <Link to="/dashboard/cart">
+                <button className="btn">
+                    <FaShoppingCart className="mr-2"></FaShoppingCart>
+                    <div className="badge badge-secondary">+{cart.length}</div>
+                </button>
+            </Link>
+        </li>
+
+    {/* <li><Link to="/">Home</Link></li>
     <li><Link to="/menu">Our Menu</Link></li>
     <li><Link to="/order/salad">Order Food</Link></li>
     <li><Link to="/secret">Secret</Link></li>
@@ -23,20 +38,30 @@ const Navbar = () => {
       <Link to="/">
         <button className="btn">
           <FaShoppingCart className="mr-2"></FaShoppingCart>
-          <div className="badge badge-secondary">+0</div>
+          <div className="badge badge-secondary">+{cart.length}</div>
         </button>
       </Link>
-    </li>
+    </li> */}
 
-    {
+    {/* {
 
-      user ? <>
+      user ? <> */}
         {/* <span>{user?.displayName}</span> */}
-        <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+        {/* <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
       </> : <>
         <li><Link to="login">Login</Link></li>
       </>
-    }
+    } */}
+
+         {
+            user ? <>
+                {/* <span>{user?.displayName}</span> */}
+                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+            </> : <>
+                <li><Link to="/login">Login</Link></li>
+            </>
+        }
+        
 
     {/* <li><a>Item 3</a></li> */}
     {/* <li><a>Item 1</a></li>
