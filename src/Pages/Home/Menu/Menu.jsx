@@ -29,21 +29,21 @@ const offered = menu.filter(item => item.category === 'offered');
             <title>Bistro Boss | Menu</title>
          </Helmet>
          <Cover img={menuImg} title="Our Menu"> </Cover>
-         <SectionTitle subHeading={"Dont't Miss "} heading={"Todays Offer"}></SectionTitle>
+         <SectionTitle subHeading={"Dont't Miss "} heading={"Today's Offer"}></SectionTitle>
          {/* offered menu  */}
         <MenuCategory items={offered}></MenuCategory>
 
         {/* dessert menu  */}
 
-        <MenuCategory items={dessert} title={"Dessert"} img={dessertImg}>
+        <MenuCategory items={dessert} title={"dessert"} img={dessertImg}>
 
         </MenuCategory>
 
          {/* pizza menu */}
 
-         <MenuCategory items={pizza} title={"Pizza"} img={pizzaImg}></MenuCategory>
-         <MenuCategory items={salad} title={"Salad"} img={saladImg}></MenuCategory>
-         <MenuCategory items={soup} title={"Soup"} img={soupImg}></MenuCategory>
+         <MenuCategory items={pizza} title={"pizza"} img={pizzaImg}></MenuCategory>
+         <MenuCategory items={salad} title={"salad"} img={saladImg}></MenuCategory>
+         <MenuCategory items={soup} title={"soup"} img={soupImg}></MenuCategory>
 
         </div>
     );

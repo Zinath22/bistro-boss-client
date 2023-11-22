@@ -92,8 +92,8 @@ import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
         {
           path: 'updateItem/:id',
           element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-          // loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
-          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
+          // loader: ({params}) => fetch(`https://bistro-boss-server-inky-ten.vercel.app/menu/${params.id}`)
+          loader: ({params}) => fetch(`https://bistro-boss-server-inky-ten.vercel.app/menu/${params.id}`)
         },
         {
           path: 'users',
