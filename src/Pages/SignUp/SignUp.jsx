@@ -19,7 +19,7 @@ const SignUp = () => {
 
   const onSubmit = data => {
     console.log(data);
-    createUser(data.email, data.password)
+    createUser(data.email, data.passworad)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);

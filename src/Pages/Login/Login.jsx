@@ -8,7 +8,7 @@ import SocialLogin from '../../components/SocialLogin/SocialLogin';
 const Login = () => {
 
     // const captchaRef = useRef(null)
-    const [disabled, setDisabled] = useState(true);
+    const [disabled, setDisabled] = useState(true); 
 
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();

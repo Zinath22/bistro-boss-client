@@ -81,6 +81,8 @@ const AddItems = () => {
                         required
                         className="input input-bordered w-full" />
                 </div>
+
+            
                 <div className="flex gap-6">
                     {/* category */}
                     <div className="form-control w-full my-6">
